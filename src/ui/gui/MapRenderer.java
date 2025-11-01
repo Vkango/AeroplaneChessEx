@@ -283,7 +283,7 @@ public class MapRenderer implements IMapRenderer {
         double cellY = PADDING + y * CELL_SIZE;
 
         int count = chessmen.size();
-        double radius = 12 / (count / 4); // 棋子半径
+        double radius = 12 / ((count / 4) + 1); // 棋子半径
 
         if (count == 1) {
             IChessman chessman = chessmen.get(0);
