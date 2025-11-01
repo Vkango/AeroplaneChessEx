@@ -2,7 +2,7 @@
 
 Java Course Project: 飞行棋重构版
 
-[![Version](https://img.shields.io/badge/Version-1.0.0.re-blue.svg)](https://github.com/Vkango/AeroplaneChessEx)[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)[![JavaFX](https://img.shields.io/badge/JavaFX-21.0.8-green.svg)](https://openjfx.io/)[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0.0.re-blue.svg)](https://github.com/Vkango/AeroplaneChessEx)  [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://www.oracle.com/java/)  [![JavaFX](https://img.shields.io/badge/JavaFX-21.0.8-green.svg)](https://openjfx.io/)  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 - 📡 **事件驱动**: 基于事件总线实现松耦合设计
 - 🔌 **插件化架构**: 用户可以很方便地通过加载不同扩展改变游戏内容, 对插件开发者友好.
