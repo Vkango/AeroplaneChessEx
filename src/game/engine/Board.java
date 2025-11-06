@@ -51,6 +51,7 @@ public class Board implements IBoard {
     }
 
     private void onChessmanMoved(IGameEvent event) {
+        // 已经到达了触发方块效果，也可能下一步也要连锁触发方块效果，因此先检查
         // 表示已经移动完成到了一个格子的事件。
         // 步数为0，就重新触发当前方块事件。
         if (event == null || !(event.getData() instanceof IChessman)) {
@@ -113,7 +114,7 @@ public class Board implements IBoard {
         int currentPos = chessman.getPosition();
         int endPosition = mapProvider.getEndPosition(chessman.getOwner().getPlayerId());
 
-        // 逐格移动
+        // 逐格移动，实际上改棋子位置归Chessman管
         if (steps > 0) {
             for (int i = 0; i < steps; i++) {
                 int nextPos = currentPos + 1;
@@ -139,7 +140,7 @@ public class Board implements IBoard {
                     if (chessman instanceof Chessman) {
                         Chessman chess = (Chessman) chessman;
                         int oldPos = chess.getPosition();
-                        // 直接修改内部位置，不触发事件
+                        // 这里其实是直接修改位置字段，绕过setPosition方法以避免触发事件，因为渲染位置需要用getPosition，防止传参罢了
                         java.lang.reflect.Field posField;
                         try {
                             posField = Chessman.class.getDeclaredField("position");

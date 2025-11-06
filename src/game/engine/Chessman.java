@@ -35,16 +35,7 @@ public class Chessman implements IChessman {
 
     @Override
     public void setPosition(int position) {
-        int oldPosition = this.position;
         this.position = position;
-        if (oldPosition != position && oldPosition != -1) {
-            java.util.Map<String, Object> moveData = new java.util.HashMap<>();
-            moveData.put("chessman", this);
-            moveData.put("from", oldPosition);
-            moveData.put("to", position);
-            EventBus.getInstance().publish(new GameEvent("ChessmanMoveEasing", moveData,
-                    "棋子移动动画"));
-        }
         EventBus.getInstance().publish(new GameEvent("ChessmanMoved", this,
                 "棋子 " + this.getChessmanId() + " 移动到了位置 " + position));
     }
